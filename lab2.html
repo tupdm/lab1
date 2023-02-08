@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ristorante Con Fusion: About Us</title>
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/jquery/dist/jquery.min.js">
+    <link rel="stylesheet" href="node_modules/popper.js/dist/popper.min.js">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="./assets/css/lab2.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm sticky-top" style="background-color: #7134db;">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="fa fa-solid fa-bars" style="color: white;"></span>
+                    </button>
+                </div>
+                <div class="col-8">
+                    <a class="navbar-brand" href="#" style="color: black; margin-right: 5%; padding: 0;"><img
+                            src="./img/img/logo.png" width="35px" height="35px" alt=""></a>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-home" style="color: white;"> Home</i></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-info" aria-hidden="true" style="color: white;">
+                                About</i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-solid fa-bars" style="color: white;">
+                                Menu</i></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: white;"><i class="fa fa-solid fa-address-card">
+                                Contact</i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    </nav>
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-5 align-self-center">
+                    <h1>Ristorante con Fusion</h1>
+                    <p>We take inspiration from the World's best cuisines, and create a unique fusion experience.<br>
+                        Our lipsmacking creations will tickle your culinary senses!</p>
+                </div>
+                <div class="col-12 col-sm-3 align-self-center">
+                    <div class="row justify-content-center">
+                        <img src="./img/img/logo.png" width="120px" height="100px" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                    <div class="row justify-content-center">
+  
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" style="padding: .5rem 2.5rem;">
+                                Reverse a table
+                              </button>
+                              
+                              <!-- Modal -->
+                              <div class="modal fade" style="color: black;" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Reverse a table</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-3 col-12">Number of guests</div>
+                                            <div class="col-sm-9 col-12 align-self-start">
+                                                <div class="row justify-content-start">
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="inlineCheckbox"
+                                                            value="option1">
+                                                        <label class="form-check-label" for="inlineCheckbox1">1</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="inlineCheckbox"
+                                                            value="option2">
+                                                        <label class="form-check-label" for="inlineCheckbox2">2</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="inlineCheckbox"
+                                                            value="option3">
+                                                        <label class="form-check-label" for="inlineCheckbox3">3</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="inlineCheckbox"
+                                                            value="option3">
+                                                        <label class="form-check-label" for="inlineCheckbox3">4</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="inlineCheckbox" value="4">
+                                                        <label class="form-check-label" for="inlineCheckbox3">5</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="inlineCheckbox" value="5">
+                                                        <label class="form-check-label" for="inlineCheckbox3">6</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-top: 2%; margin-bottom: 2%; padding: 0;">
+                                            <div class="col-3">Section</div>
+                                            <div><button type="button" class="btn-success">Non-Smoking</button><button type="button" class="btn-danger">Smoking</button></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3 col-12">
+                                                Date and time
+                                            </div>
+                                            <div class="col-sm-9 col-12 align-self-start" >
+                                                <input type="date" placeholder="Date">&nbsp;&nbsp;&nbsp;<input type="time"
+                                                    placeholder="time">
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="container">
+                                    <div class="row justify-content-start offset-2">
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                      <button type="button" class="btn btn-primary">Reverse</button>
+                                    </div>
+                                    </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row" style="padding-top: 7%;  padding-bottom: 8%;">
+            <div class="col-sm-10 order-2 order-sm-1">
+                <div class="row">
+                    <div class="col-sm-2 col-6 align-self-center" style="padding-right: 0;">
+                        <div class="row justify-content-center">
+                            <img src="./img/img/uthappizza.png" width="80px" height="80px" alt=""
+                                style="padding: 2px; border: solid 0.5px rgb(182, 185, 182);">
+                        </div>
+                    </div>
+                    <div class="col-sm-10 col-6 align-self-center" style="padding-left: 0;">
+                        <h1 style="font-size: x-large;">Uthappiza <span class="badge badge-danger">HOT</span> <span
+                                style="border-radius: 20px;" class="badge badge-secondary">$4.99</span></h1>
+                        <p class="d-none d-sm-block">Virginia was by far the most populous state, wtih twice as many as
+                            people as New York,
+                            four times as many as New Jersey and ten times as many as Delaware. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 order-1 order-sm-3">
+                <h1 style="font-size: x-large;">Our lipsmacking culinary creations</h1>
+            </div>
+        </div>
+        <hr>
+        <div class="row" style="padding-bottom: 8%; padding-top: 7%;">
+            <div class="col-sm-2 align-self-center">
+                <h1 style="font-size: x-large;">This month's promtotion</h1>
+            </div>
+            <div class="col-sm-10">
+                <div class="row justify-content-center">
+                    <div class="col-sm-10 col-12 align-self-center" style="padding-left: 0; padding-right: 0;">
+                        <h1 style="font-size: x-large;" class="d-none d-sm-block">Weekend Grand Buffet <span
+                                class="badge badge-danger">NEW</span>
+                        </h1>
+                        <p class="d-none d-sm-block"> Ensure that information denoted by the color is either obvious
+                            from the content itself (e.g.
+                            the visible text),
+                            or is included through alternative means, such as additional text hidden with the
+                            .sr-only class.Ensure that information denoted by the color is either
+                            obvious from the content itself (e.g. the visible text), or is included
+                            through alternative means, such as additional text hidden with the .sr-only class.</p>
+                    </div>
+                    <div class="col-sm-2 col-6 align-self-center" style="padding-left: 0;">
+
+                        <div class="row justify-content-center">
+                            <div class="d-block d-sm-none col-7">
+                                <h1 style="font-size: x-large;">Weekend Grand Buffet <span
+                                    class="badge badge-danger">NEW</span>
+                            </h1>
+                            </div>
+
+                            <div class="col-sm-12 col-5">
+                            <img src="./img/img/buffet.png" width="80px" height="80px" alt=""
+                                style="padding: 2px; border: solid 0.5px rgb(182, 185, 182);">
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <hr>
+    <div class="row" style="padding-top: 7%;  padding-bottom: 8%;">
+        <div class="col-sm-10  order-2 order-sm-1">
+            <div class="row">
+                <div class="col-sm-2 align-self-center col-6 order-1" style="padding-right: 0;">
+                    <div class="row justify-content-center">
+                        <img src="./img/img/alberto.png" width="80px" height="80px" alt=""
+                            style="padding: 2px; border: solid 0.5px rgb(182, 185, 182);">
+                    </div>
+                </div>
+                <div class="col-sm-10 align-self-center col-6 order-2" style="padding-left: 0;">
+                    <h1 style="font-size: x-large;">Alberto Ronaldo</h1>
+                    <h2>Executive Chef</h2>
+                    <p class="d-none d-sm-block">Virginia was by far the most populous state, wtih twice as many as people as New York,
+                        four times as many as New Jersey and ten times as many as Delaware. </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 align-self-center order-1 order-sm-3">
+            <h1 style="font-size: x-large;">Meet our culinary specialists</h1>
+        </div>
+    </div>
+    <hr>
+    <div class="row" style="padding-top: 7%;  padding-bottom: 8%; ">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="card" style="width: 27rem;">
+
+                    <div class="card-title" style="background-color: rgb(237, 180, 8,0.8); color: white;">
+                        <h2> &nbsp;&nbsp;Reverse a table</h2>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3 col-12">Number of guests</div>
+                            <div class="col-sm-9 col-12 align-self-start">
+                                <div class="row justify-content-start">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineCheckbox"
+                                            value="option1">
+                                        <label class="form-check-label" for="inlineCheckbox1">1</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineCheckbox"
+                                            value="option2">
+                                        <label class="form-check-label" for="inlineCheckbox2">2</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineCheckbox"
+                                            value="option3">
+                                        <label class="form-check-label" for="inlineCheckbox3">3</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineCheckbox"
+                                            value="option3">
+                                        <label class="form-check-label" for="inlineCheckbox3">4</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineCheckbox" value="4">
+                                        <label class="form-check-label" for="inlineCheckbox3">5</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineCheckbox" value="5">
+                                        <label class="form-check-label" for="inlineCheckbox3">6</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-sm-3 col-12">
+                                Date and time
+                            </div>
+                            <div class="col-sm-9 col-12 align-self-start">
+                                <input type="date" placeholder="Date">&nbsp;&nbsp;&nbsp;<input type="time"
+                                    placeholder="time">
+                            </div>
+                        </div>
+                        <br /><br />
+                        <div style="text-align: center;"> <a href="#" class="btn btn-primary">Reverse</a> </div>
+                    </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 offset-1 col-sm-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-7 col-sm-5">
+                    <h5>Our Address</h5>
+                    <address class="address">
+                        121, Clear Water Bay Road<br>
+                        Clear Water Bay, Kowloon<br>
+                        HONG KONG<br>
+                        <i class="fa fa-solid fa-phone"></i>: +852 1234 5678<br>
+                        <i class="fa fa-solid fa-fax"></i>: +852 8765 4321<br>
+                        <i class="fa fa-solid fa-envelope"></i>: <a
+                            href="mailto:confusion@food.net">confusion@food.net</a>
+                    </address>
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                    <div class="text-center">
+                        <a href="http://google.com/+"><i class="fa fa-3x fa-brands fa-google-plus-square"
+                                style="color: red;"></i></a>
+                        <a href="http://www.facebook.com/profile.php?id="><i
+                                class="fa fa-3x fa-brands fa-facebook-square" style="color: blue;"></i></a>
+                        <a href="http://www.linkedin.com/in/"><i class="fa fa-3x fa-brands fa-linkedin-square"
+                                style="color: rgb(12, 85, 181);"></i></a>
+                        <a href="http://twitter.com/"><i class="fa fa-3x fa-brands fa-twitter-square"
+                                style="color: rgb(12, 135, 206);"></i></a>
+                        <a href="http://youtube.com/"><i class="fa fa-3x fa-brands fa-youtube"
+                                style="background-color: red; color: white; border-radius: 9px;"></i></a>
+                        <a href="mailto:"><i class="fa fa-3x fa-regular fa-envelope-o" style="color: blue;"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <p>© Copyright 2018 Ristorante Con Fusion</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/popper.js/dist/popper.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="node_modules/font-awesome/css/font-awesome.min.css"></script>
+<script src="node_modules/bootstrap-social/bootstrap-social.css"></script>

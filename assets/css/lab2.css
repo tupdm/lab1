@@ -1,0 +1,35 @@
+.jumbotron{
+    background: #9d7dd5;
+    color: white;
+    margin: 0;
+}
+
+
+
+.titlehistory{
+    margin-top: 5%;
+    margin-bottom: 8%;
+}
+
+.detail{
+    margin-bottom: 8%;
+}
+
+.footer{
+    background-color: #D1C4E9;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.list-unstyled{
+    font-size: larger;
+}
+
+.address{
+    font-size: medium;
+}
+
+.col-auto{
+    font-weight: 500;
+    font-size: larger;
+}
