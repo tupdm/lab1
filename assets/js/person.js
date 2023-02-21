@@ -158,33 +158,48 @@ if (lastClickedRow) {
 }
 }
 
+
+// -------------------------------------------------------------------------------------------------------------
+let searchPersonEvent = () => {
+  let list = searchPerson(persons);
+  showPersons(list);
+};
+
+function searchPerson(list) {
+  let min = document.getElementById("min").value;
+  let max = document.getElementById("max").value;
+  if (min > max) {
+    alert("Please enter valid MIN MAX");
+  }else if(!min || !max) {
+
+    return list;
+    
+  }
+  else {
+    let newPersons = list.filter(
+        (element) => element.age >= min && element.age <= max
+      );
+      return newPersons;
+  }
+}
 // -------------------------------------------------------------------------------------------------------------
 
-let sortPerson = ()=> {
-  persons.sort((a, b) => {
+let sortPersonEvent = ()=> {
+  
+  let list = searchPerson(persons);
+  let listSort = sortPerson(list);
+  
+  
+  showPersons(listSort);
+}
+
+function sortPerson(list){
+  list.sort((a, b) => {
     let nameCompare = a.name.localeCompare(b.name);
     return nameCompare !== 0 ? nameCompare : a.age - b.age;
   });
-  showPersons(persons);
+  return list;
 }
-
-// -------------------------------------------------------------------------------------------------------------
-let searchPerson = () => {
-let min = document.getElementById("min").value;
-let max = document.getElementById("max").value;
-if (min > max) {
-  alert("Please enter valid MIN MAX");
-}else if(!min || !max) {
-  showPersons(persons);
-}
-else {
-  let newPersons = persons.filter(
-      (element) => element.age >= min && element.age <= max
-    );
-    showPersons(newPersons);
-}
-};
-
 // -------------------------------------------------------------------------------------------------------------
 let deletePerson = () => {
 if (lastClickedRow) {
