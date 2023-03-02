@@ -1,118 +1,78 @@
-let persons = [
-    { id: 1, name: "An", age: 19, gender: false },
-    { id: 2, name: "Tu", age: 23, gender: true },
-    { id: 3, name: "Thang", age: 20, gender: true },
-    { id: 4, name: "Thang", age: 18, gender: true },
-  ];
-  let notExsit = (id) => {
-    return persons.find((element) => element.id == id) == undefined;
-  };
-  
-  let showPerson = (persons) => {
-    let table = document.querySelector("#table_content");
-    table.innerHTML = "";
-    persons.forEach((element) => {
-      const ele = document.createElement("tr");
-  
-      let { id, name, age, gender } = element;
-      let newS = `<td>${id}</td> <td>${name}</td> <td>${age}</td> <td>${
-        gender == true ? "Male" : "Female"
-      }</td>`;
-      ele.setAttribute("onclick", "showInput(" + id + ")");
-      ele.setAttribute("name", id);
-      ele.innerHTML = newS;
-      table.appendChild(ele);
-    });
-  };
-  let showInput = (id) => {
-    let a = persons.find((element) => {
-      return element.id == id;
-    });
-    let inputID = document.querySelector("#id");
-    inputID.value = a.id;
-    inputID.setAttribute("readonly", true);
-    inputID.setAttribute("disabled", true);
-    let c = "" + id;
-    let node = document.getElementsByName(c)[0];
-    node.setAttribute("style", "background-color: aqua;");
-    let inputName = document.querySelector("#name");
-    inputName.value = a.name;
-    let inputAge = document.querySelector("#age");
-    inputAge.value = a.age;
-    let inputGender = document.getElementsByName("gender");
-    if (a.gender == true) {
-      inputGender[0].checked = true;
-    } else inputGender[1].checked = true;
-  };
-  function addPerson() {
-    let id = document.getElementById("id").value;
-    let name = document.getElementById("name").value;
-    let age = Number(document.getElementById("age").value);
-    let gender =
-      document.getElementsByName("gender")[0].checked == true ? true : false;
-    if (id == "") alert("Moi ban nhap ID");
-    else if (name == "") alert("Moi ban nhap Name");
-    else if (age == "") alert("Moi ban nhap Age");
-    else {
-      if (!notExsit(id)) alert("ID da ton tai");
-      else {
-        let table = document.querySelector("#table_content");
-        const ele = document.createElement("tr");
-        ele.addEventListener("click", showInput());
-        let newS = `<td>${id}</td> <td>${name}</td> <td>${age}</td> <td>${
-          gender == true ? "Male" : "Female"
-        }</td>`;
-        ele.innerHTML = newS;
-  
-        table.appendChild(ele);
-        persons.push({ id, name, age, gender });
-      }
-    }
-  }
-  let sort = () => {
-    persons.sort((a, b) => {
-      if (a.name == b.name) return a.age - b.age;
-      else return a.name.localeCompare(b.name);
-    });
-    showPerson(persons);
-  };
-  
-  let search = () => {
-    let min = document.getElementById("min").value;
-    let max = document.getElementById("max").value;
-    if (min > max) {
-      alert("Nhap lai Min,Max !!");
-    } else {
-      let newPersons = persons.filter(
-        (element) => element.age >= min && element.age <= max
-      );
-      showPerson(newPersons);
-    }
-  };
-  
-  let update = () => {
-    let inputID = document.getElementById("id");
-    let id = inputID.value;
-    let name = document.getElementById("name").value;
-    let age = Number(document.getElementById("age").value);
-    let gender =
-      document.getElementsByName("gender")[0].checked == true ? true : false;
-    if (name == "") alert("Moi ban nhap Name");
-    else if (age == "") alert("Moi ban nhap Age");
-    else {
-      persons.forEach((element) => {
-        if (element.id == id) {
-          element.name = name;
-          element.age = age;
-          element.gender = gender;
-        }
-      });
-      showPerson(persons);
-      inputID.removeAttribute("readonly", false);
-      inputID.removeAttribute("disabled", false);
-      let node = document.getElementsByName("" + id)[0];
-      node.removeAttribute("onclick");
-    }
-  };
-  
-  document.readyState = showPerson(persons);
+// ---------Responsive-navbar-active-animation-----------
+function test(){
+	var tabsNewAnim = $('#navbarSupportedContent');
+	var selectorNewAnim = $('#navbarSupportedContent').find('li').length;
+	var activeItemNewAnim = tabsNewAnim.find('.active');
+	var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
+	var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
+	var itemPosNewAnimTop = activeItemNewAnim.position();
+	var itemPosNewAnimLeft = activeItemNewAnim.position();
+	$(".hori-selector").css({
+		"top":itemPosNewAnimTop.top + "px", 
+		"left":itemPosNewAnimLeft.left + "px",
+		"height": activeWidthNewAnimHeight + "px",
+		"width": activeWidthNewAnimWidth + "px"
+	});
+	$("#navbarSupportedContent").on("click","li",function(e){
+		$('#navbarSupportedContent ul li').removeClass("active");
+		$(this).addClass('active');
+		var activeWidthNewAnimHeight = $(this).innerHeight();
+		var activeWidthNewAnimWidth = $(this).innerWidth();
+		var itemPosNewAnimTop = $(this).position();
+		var itemPosNewAnimLeft = $(this).position();
+		$(".hori-selector").css({
+			"top":itemPosNewAnimTop.top + "px", 
+			"left":itemPosNewAnimLeft.left + "px",
+			"height": activeWidthNewAnimHeight + "px",
+			"width": activeWidthNewAnimWidth + "px"
+		});
+	});
+}
+$(document).ready(function(){
+	setTimeout(function(){ test(); });
+});
+$(window).on('resize', function(){
+	setTimeout(function(){ test(); }, 500);
+});
+$(".navbar-toggler").click(function(){
+	$(".navbar-collapse").slideToggle(300);
+	setTimeout(function(){ test(); });
+});
+
+
+
+// --------------add active class-on another-page move----------
+jQuery(document).ready(function($){
+	// Get current path and find target link
+	var path = window.location.pathname.split("/").pop();
+
+	// Account for home page with empty path
+	if ( path == '' ) {
+		path = 'index.html';
+	}
+
+	var target = $('#navbarSupportedContent ul li a[href="'+path+'"]');
+	// Add active class to target link
+	target.parent().addClass('active');
+});
+
+
+
+
+// Add active class on another page linked
+// ==========================================
+// $(window).on('load',function () {
+//     var current = location.pathname;
+//     console.log(current);
+//     $('#navbarSupportedContent ul li a').each(function(){
+//         var $this = $(this);
+//         // if the current path is like this link, make it active
+//         if($this.attr('href').indexOf(current) !== -1){
+//             $this.parent().addClass('active');
+//             $this.parents('.menu-submenu').addClass('show-dropdown');
+//             $this.parents('.menu-submenu').parent().addClass('active');
+//         }else{
+//             $this.parent().removeClass('active');
+//         }
+//     })
+// });

@@ -7,7 +7,7 @@ const persons = [
 ];
 // --------------------------------------------------------------------------------------------------------------------
 // Display person
-let lastClickedRow = null;
+let lastRow = null;
 
 let showPersons = (array) => {
 let table = document.getElementById("person_table");
@@ -37,7 +37,7 @@ for (let person of array) {
     <td>${gender ? "Male" : "Female"}</td>
   `;
   row.addEventListener("click", () => {
-    if (row === lastClickedRow) {
+    if (row === lastRow) {
       // Clear input fields and deselect row
       document.getElementById("id").value = "";
       document.getElementById("id").disabled = false;
@@ -47,7 +47,8 @@ for (let person of array) {
       document.getElementById("male").checked = true;
       document.getElementById("female").checked = false;
       row.classList.remove("selected");
-      lastClickedRow = null;
+      row.style.backgroundColor = "white";
+      lastRow = null;
 
       // Enable save button
       saveButton.disabled = false;
@@ -64,11 +65,13 @@ for (let person of array) {
       } else {
         document.getElementById("female").checked = true;
       }
-      if (lastClickedRow) {
-        lastClickedRow.classList.remove("selected");
+      if (lastRow) {
+        lastRow.classList.remove("selected");
+        lastRow.style.backgroundColor = "white";
       }
       row.classList.add("selected");
-      lastClickedRow = row;
+      row.style.backgroundColor = "pink";
+      lastRow = row;
 
       // Disable save button and change cursor
       saveButton.disabled = true;
@@ -90,6 +93,10 @@ let addPerson = () => {
 
   if (!id) {
     alert("Please enter an ID.");
+    return;
+  }
+  if (id < 0) {
+    alert("Please enter valid ID.");
     return;
   }
 
@@ -123,7 +130,7 @@ let addPerson = () => {
 let updatePerson = () => {
 
 
-if (lastClickedRow) {
+if (lastRow) {
   let id = document.getElementById("id").value;
   let name = document.getElementById("name").value;
   let age = document.getElementById("age").value;
@@ -147,8 +154,8 @@ if (lastClickedRow) {
     document.getElementById("age").value = "";
     document.getElementById("male").checked = true;
     document.getElementById("female").checked = false;
-    lastClickedRow.classList.remove("selected");
-    lastClickedRow = null;
+    lastRow.classList.remove("selected");
+    lastRow = null;
 
     // Enable save button
     document.getElementById("save_button").disabled = false;
@@ -163,7 +170,7 @@ if (lastClickedRow) {
 let sortPerson = ()=> {
   persons.sort((a, b) => {
     let nameCompare = a.name.localeCompare(b.name);
-    return nameCompare !== 0 ? nameCompare : a.age - b.age;
+    return nameCompare !== 0 ? nameCompare : b.age - a.age;
   });
   showPersons(persons);
 }
@@ -187,7 +194,7 @@ else {
 
 // -------------------------------------------------------------------------------------------------------------
 let deletePerson = () => {
-if (lastClickedRow) {
+if (lastRow) {
   if(confirm("Are you sure to delete this person?") == true){
   let personId = parseInt(document.getElementById("id").value);
   let index = persons.findIndex(person => person.id === personId);
@@ -202,8 +209,8 @@ if (lastClickedRow) {
     document.getElementById("age").value = "";
     document.getElementById("male").checked = true;
     document.getElementById("female").checked = false;
-    lastClickedRow.classList.remove("selected");
-    lastClickedRow = null;
+    lastRow.classList.remove("selected");
+    lastRow = null;
 
     // Enable save button
     let saveButton = document.getElementById("save_button");
